@@ -8,7 +8,7 @@
   <packaging>jar</packaging>
 
   <name>Brunosbox</name>
-  <url>http://maven.apache.org</url>
+  <url>http://https://github.com/ccastroto/Brunosbox-kata.git</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,6 +21,12 @@
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.freva</groupId>
+      <artifactId>ascii-table</artifactId>
+      <version>1.8.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
