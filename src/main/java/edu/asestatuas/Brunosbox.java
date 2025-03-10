@@ -61,5 +61,21 @@ public class Brunosbox {
          */
 
         ScoreCard whiteScoreCard = new ScoreCard("WHITE");
+
+        /**
+         * Asigna el nombre de los pugiles
+         * Rocky Balboa (red) vs Apollo Creed (blue)
+         */
+
+        whiteScoreCard.setRCorner("Rocky Balboa");
+        whiteScoreCard.setBCorner("Apollo Creed");
+
+        /**
+         * Muestra la tarjeta por consola con
+         * el formato que se propone en el enunciado
+         * del ejercicio.
+         */
+
+        System.out.println(whiteScoreCard);
     }
 }
