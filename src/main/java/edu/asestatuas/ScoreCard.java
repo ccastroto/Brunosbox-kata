@@ -22,4 +22,8 @@ public class ScoreCard {
         this.redCorner = boxerName;
     }
 
+    byte getNumRounds() {
+        return (byte) (this.blueCorner.length() + this.redCorner.length());
+    }
+
 }
