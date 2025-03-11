@@ -27,5 +27,9 @@ public class ScoreCardTest {
         scoreCard.setBCorner("Apollo Creed");
         assertEquals("Apollo Creed", "Apollo Creed");
     }
-
+    @Test
+    public void testGetNumRounds() {
+        scoreCard = new ScoreCard("blue");
+        assertEquals(scoreCard.getNumRounds(), 0);
+    }
 }
