@@ -25,5 +25,12 @@ public class ScoreCard {
     byte getNumRounds() {
         return (byte) (this.blueCorner.length() + this.redCorner.length());
     }
+    public String toString() {
+        return "\n\t\t\t\t " + this.color
+                + "\n\t\t" + this.blueCorner
+                + "\t" + this.redCorner
+                + "\n\t\t\t\t"
+                + "0" + " rounds\n";
+    }
 
 }
