@@ -19,7 +19,7 @@ public class ScoreCard {
     }
 
     void setRCorner(String boxerName) {
-        this.redCorner = redCorner;
+        this.redCorner = boxerName;
     }
 
 }
