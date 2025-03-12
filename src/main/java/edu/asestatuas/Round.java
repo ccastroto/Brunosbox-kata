@@ -1,13 +1,11 @@
 package edu.asestatuas;
 
-public class Round {
+public interface Round {
 
-    byte redBoxerScore;
-    byte blueBoxerScore;
+    byte redBoxerScore = 0;
+    byte blueBoxerScore = 0;
 
-    public byte boxerRoundScore(){
-        redBoxerScore = 0;
-        blueBoxerScore = 0;
-        return 0;
+    static byte boxerRoundScore(){
+        return redBoxerScore + blueBoxerScore;
     }
 }
