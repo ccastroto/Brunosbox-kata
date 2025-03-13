@@ -28,5 +28,8 @@ public class RegularRound implements Round {
         this.blueBoxerScore = Round.blueBoxerScore;
     }
 
+    public String toString(){
+        return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();
+    }
 
 }
