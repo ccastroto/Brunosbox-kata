@@ -8,4 +8,7 @@ public interface Round {
     static byte boxerRoundScore(){
         return redBoxerScore + blueBoxerScore;
     }
+
+    byte getRedBoxerScore();
+    byte getBlueBoxerScore();
 }
