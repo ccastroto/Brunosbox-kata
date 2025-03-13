@@ -111,7 +111,7 @@ public class Brunosbox {
          * Se llaman round score.
          */
 
-        whiteScoreCard.loadJudgeScoreCard(
+        whiteScoreCard.loadJudgeScoreCard(data[0]
                 // Escribe aquí el código para acceder al primer
                 // elemento del array String[][] data de la línea 13,
                 // la tarjeta blanca
