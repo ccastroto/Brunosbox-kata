@@ -24,8 +24,8 @@ public class RegularRound implements Round {
     }
 
     void boxerRoundScore(){ // el void es provisional hay que modificarlo, se pone para que no rompa el código
-        this.redBoxerScore = Round.redBoxerScore;
-        this.blueBoxerScore = Round.blueBoxerScore;
+        this.redBoxerScore = 10;
+        this.blueBoxerScore = 9;
     }
 
     public String toString(){
