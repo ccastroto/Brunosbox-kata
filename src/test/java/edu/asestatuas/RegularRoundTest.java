@@ -23,5 +23,9 @@ public class RegularRoundTest {
         this.regularRound = new RegularRound("10-9");
         assertEquals(this.regularRound.getBlueBoxerScore(),0);
     }
-
+    @Test
+    public void testtoString(){
+        this.regularRound = new RegularRound("10-9");
+        assertEquals(this.regularRound.toString(),"0 - 0");
+    }
 }
