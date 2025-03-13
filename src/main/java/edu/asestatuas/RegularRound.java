@@ -2,7 +2,7 @@ package edu.asestatuas;
 
 public class RegularRound implements Round {
 
-    private String roundScore;
+    private final String roundScore;
     private byte redBoxerScore;
     private byte blueBoxerScore;
 
@@ -22,4 +22,11 @@ public class RegularRound implements Round {
     public byte getBlueBoxerScore(){
         return this.blueBoxerScore;
     }
+
+    void boxerRoundScore(){ // el void es provisional hay que modificarlo, se pone para que no rompa el código
+        this.redBoxerScore = Round.redBoxerScore;
+        this.blueBoxerScore = Round.blueBoxerScore;
+    }
+
+
 }
