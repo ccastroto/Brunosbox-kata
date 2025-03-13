@@ -32,4 +32,12 @@ public class ScoreCardTest {
         scoreCard = new ScoreCard("blue");
         assertEquals(scoreCard.getNumRounds(), 0);
     }
+    @Test
+    public void testloadJudgeScoreCard() {
+        scoreCard = new ScoreCard("blue");
+        String[] judgeScoreCard = {"10-9", "9-10"};
+        scoreCard.loadJudgeScoreCard(judgeScoreCard);
+        assertEquals(scoreCard.getNumRounds(), 0);
+        assertEquals(0, scoreCard.getNumRounds());
+    }
 }
