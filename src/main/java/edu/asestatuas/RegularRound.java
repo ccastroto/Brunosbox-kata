@@ -1,15 +1,25 @@
 package edu.asestatuas;
 
-import edu.asestatuas.Round;
+public class RegularRound implements Round {
 
-public class RegularRound {
+    private String roundScore;
+    private byte redBoxerScore;
+    private byte blueBoxerScore;
 
-    String roundScore;
-    byte redBoxerScore;
-    byte blueBoxerScore;
+    RegularRound(String roundScore) {
+        this.roundScore = roundScore.replaceAll("\\s", "");
+    }
 
-    public RegularRound RegularRound(String roundScore) {
-        this.roundScore = roundScore;
-        return this;
+    String getRoundScore() {
+        return roundScore;
+    }
+
+    @Override
+    public byte getRedBoxerScore(){
+        return this.redBoxerScore;
+    }
+    @Override
+    public byte getBlueBoxerScore(){
+        return this.blueBoxerScore;
     }
 }
