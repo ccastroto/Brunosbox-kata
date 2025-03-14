@@ -46,7 +46,13 @@ public class ScoreCard {
                 + "\n\t\t" + this.blueCorner
                 + "\t" + this.redCorner
                 + "\n\t\t\t\t"
-                + "0" + " rounds\n";
+                + this.getNumRounds() + " rounds\n"
+                + this.viewRounds()
+                + "\n\tFINAL SCORE: "
+                + this.redBoxerScoreFinal
+                + " - "
+                + this.blueBoxerScoreFinal
+                + " FINAL SCORE";
     }
 
     private void setJudgeScoreCard(String[] scoreCard) {
@@ -95,7 +101,7 @@ public class ScoreCard {
     private String viewRounds(){
         StringBuilder roundsView = new StringBuilder();
         roundsView.append("\tRound \t Score \t Round \t Score \t Round\n")
-                  .append("\tScore \t Total          \t Score \t Total\n");
+                  .append("\tScore \t Total           elScore \t Total\n");
 
         byte roundNum = 1;
 
@@ -105,13 +111,13 @@ public class ScoreCard {
         for (Round round : this.rounds){
             roundsView.append("\n\t")
                       .append(round.getRedBoxerScore())
-                      .append("\t")
+                      .append("\t\t")
                       .append(redBoxerScoreFinal += round.getRedBoxerScore())
-                      .append("\t")
+                      .append("\t\t")
                       .append(roundNum++)
-                      .append("\t")
+                      .append("\t\t")
                       .append(blueBoxerScoreFinal += round.getBlueBoxerScore())
-                      .append("\t")
+                      .append("\t\t")
                       .append(round.getBlueBoxerScore());
         }
 
