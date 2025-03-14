@@ -1,5 +1,6 @@
 package edu.asestatuas;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -90,6 +91,31 @@ public class ScoreCard {
                             .byteValue();
         }
         return this.blueBoxerScoreFinal;
+    }
+    private String viewRounds(){
+        StringBuilder roundsView = new StringBuilder();
+        roundsView.append("\tRound \t Score \t Round \t Score \t Round\n")
+                  .append("\tScore \t Total          \t Score \t Total\n");
+
+        byte roundNum = 1;
+
+        byte redBoxerScoreFinal = 0;
+        byte blueBoxerScoreFinal = 0;
+
+        for (Round round : this.rounds){
+            roundsView.append("\n\t")
+                      .append(round.getRedBoxerScore())
+                      .append("\t")
+                      .append(redBoxerScoreFinal += round.getRedBoxerScore())
+                      .append("\t")
+                      .append(roundNum++)
+                      .append("\t")
+                      .append(blueBoxerScoreFinal += round.getBlueBoxerScore())
+                      .append("\t")
+                      .append(round.getBlueBoxerScore());
+        }
+
+        return roundsView.toString();
     }
 
 }
