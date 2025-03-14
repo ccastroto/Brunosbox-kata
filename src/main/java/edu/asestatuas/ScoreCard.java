@@ -3,6 +3,7 @@ package edu.asestatuas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Collections;
 
 public class ScoreCard {
 
@@ -10,8 +11,10 @@ public class ScoreCard {
     private String blueCorner = "";
     private String redCorner = "";
     private String[] judgeScoreCard;
+    private Byte redBoxerScoreFinal = 0;
+    private Byte blueBoxerScoreFinal = 0;
 
-    private  List<Round> rounds = new ArrayList<Round>();
+    private List<Round> rounds = new ArrayList<Round>();
 
     public ScoreCard(String color) {
         this.color = color;
@@ -32,6 +35,11 @@ public class ScoreCard {
     byte getNumRounds() {
         return (byte) (this.blueCorner.length() + this.redCorner.length());
     }
+
+    public List<Round> getRounds() {
+        return Collections.unmodifiableList(this.rounds);
+    }
+
     public String toString() {
         return "\n\t\t\t\t " + this.color
                 + "\n\t\t" + this.blueCorner
@@ -39,15 +47,16 @@ public class ScoreCard {
                 + "\n\t\t\t\t"
                 + "0" + " rounds\n";
     }
-    private void setJudgeScoreCard(String[] scoreCard){
+
+    private void setJudgeScoreCard(String[] scoreCard) {
         this.judgeScoreCard = scoreCard;
     }
 
-    private  void addRound(Round round){
+    private void addRound(Round round) {
         this.rounds.add(round);
     }
 
-    public void loadJudgeScoreCard(String[] judgeScoreCard){
+    public void loadJudgeScoreCard(String[] judgeScoreCard) {
         this.setJudgeScoreCard(judgeScoreCard);
 
         Optional<Round> round = Optional.empty();
@@ -55,6 +64,32 @@ public class ScoreCard {
             round = Optional.ofNullable(RoundFactory.getRound(roundScore));
             round.ifPresent(this::addRound);
         }
+    }
+
+    public byte getRedBoxerScoreFinal() {
+        if (this.redBoxerScoreFinal == 0) {
+            this.redBoxerScoreFinal =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getRedBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+                    // Tmb se puede hacer un contador utilizando un for.
+        }
+        return this.redBoxerScoreFinal;
+    }
+    public byte getBlueBoxerScoreFinal() {
+        if (this.blueBoxerScoreFinal == 0) {
+            this.blueBoxerScoreFinal =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getBlueBoxerScore)
+                            .map(Byte::intValue)
+                            . reduce(0,Integer::sum)
+                            .byteValue();
+        }
+        return this.blueBoxerScoreFinal;
     }
 
 }
