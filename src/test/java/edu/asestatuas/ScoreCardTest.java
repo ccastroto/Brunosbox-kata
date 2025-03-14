@@ -40,4 +40,18 @@ public class ScoreCardTest {
         assertEquals(scoreCard.getNumRounds(), 0);
         assertEquals(0, scoreCard.getNumRounds());
     }
+    @Test
+    public void testgetRedBoxerScoreFinal() {
+        scoreCard = new ScoreCard("red");
+        String[] redBoxerScoreFinal = {"10-9", "9-10"};
+        scoreCard.loadJudgeScoreCard(redBoxerScoreFinal);
+        assertEquals(scoreCard.getRedBoxerScoreFinal(), 0);
+    }
+    @Test
+    public void testgetBlueBoxerScoreFinal() {
+        scoreCard = new ScoreCard("blue");
+        String[] blueBoxerScoreFinal = {"10-9", "9-10"};
+        scoreCard.loadJudgeScoreCard(blueBoxerScoreFinal);
+        assertEquals(scoreCard.getBlueBoxerScoreFinal(), 0);
+    }
 }
