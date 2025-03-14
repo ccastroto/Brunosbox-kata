@@ -117,5 +117,21 @@ public class Brunosbox {
                 // la tarjeta blanca
         );
         System.out.println(whiteScoreCard);
+
+        /*
+         * Crea una clase llamada KnockdownRound
+         * que implemente la interfaz Round.
+         *
+         * Crea un round del tipo "10 - 8" o "8 -10".
+         * Muestra la puntuación obtenida por
+         * cada boxeador.
+         *
+         * En KnockdownRound la puntuacion se almacena
+         * como un número entero, no como un String.
+         */
+
+        KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
+        System.out.println("\n\t knockdown round: " + knockdownRound.getRedBoxerScore() +
+                " - " + knockdownRound.getBlueBoxerScore());
     }
 }
