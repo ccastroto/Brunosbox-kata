@@ -34,7 +34,7 @@ public class ScoreCard {
     }
 
     byte getNumRounds() {
-        return (byte) (this.blueCorner.length() + this.redCorner.length());
+        return (byte) this.getRounds().size();
     }
 
     public List<Round> getRounds() {
@@ -101,7 +101,7 @@ public class ScoreCard {
     private String viewRounds(){
         StringBuilder roundsView = new StringBuilder();
         roundsView.append("\tRound \t Score \t Round \t Score \t Round\n")
-                  .append("\tScore \t Total           elScore \t Total\n");
+                  .append("\tScore \t Total           Total \t Score\n");
 
         byte roundNum = 1;
 
