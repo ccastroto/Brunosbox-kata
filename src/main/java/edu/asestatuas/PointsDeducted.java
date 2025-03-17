@@ -8,11 +8,11 @@ public class PointsDeducted  implements Round {
 
     PointsDeducted(String roundScore){
         this.roundScore = roundScore.replaceAll("\\s", "");
-
+        this.boxerRoundScore();
     }
 
     String getRoundScore(){
-        return roundScore;
+        return this.roundScore;
     }
 
     private void boxerRoundScore(){
@@ -20,7 +20,7 @@ public class PointsDeducted  implements Round {
         String redBoxerScore = scores[0];
         String blueBoxerScore = scores[1];
 
-        if(redBoxerScore.indexOf('-') == -1){
+        if(redBoxerScore.indexOf(',') == -1){
             this.redBoxerScore = Byte.parseByte(redBoxerScore);
             this.blueBoxerScore = this.parseComaBlue(blueBoxerScore);
         } else {
@@ -29,10 +29,10 @@ public class PointsDeducted  implements Round {
         }
     }
     private byte parseComaBlue(String score){
-        return Byte.parseByte(score.substring(0, score.indexOf('-')));
+        return Byte.parseByte(score.substring(0, score.indexOf(',')));
     }
     private byte parseComaRed(String score){
-        return Byte.parseByte(score.substring(score.indexOf('-') + 1, score.length()));
+        return Byte.parseByte(score.substring(score.indexOf(',') + 1), score.length());
     }
 
     @Override
