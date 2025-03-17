@@ -8,6 +8,7 @@ public class RegularRound implements Round {
 
     RegularRound(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
+        this.boxerRoundScore();
     }
 
     String getRoundScore() {
@@ -24,8 +25,9 @@ public class RegularRound implements Round {
     }
 
     void boxerRoundScore(){ // el void es provisional hay que modificarlo, se pone para que no rompa el código
-        this.redBoxerScore = 10;
-        this.blueBoxerScore = 9;
+        String[] scores = getRoundScore().split("-",2);
+        this.redBoxerScore = Byte.parseByte(scores[0]);
+        this.blueBoxerScore = Byte.parseByte(scores[1]);
     }
 
     @Override
