@@ -32,7 +32,7 @@ public class PointsDeducted  implements Round {
         return Byte.parseByte(score.substring(0, score.indexOf(',')));
     }
     private byte parseComaRed(String score){
-        return Byte.parseByte(score.substring(score.indexOf(',') + 1), score.length());
+        return Byte.parseByte(score.substring(score.indexOf(',') + 1));
     }
 
     @Override
